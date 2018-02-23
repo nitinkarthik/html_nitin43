@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src="angular.min.js"></script>
+<script>
+angular.module("mod",[]).controller("con1",function($scope){
+ $scope.name = "ferby ";
+ $scope.message ="welcome";
+ $scope.persons=[];
+ $scope.add=function(){
+ var user={
+ fname:$scope.name,
+ lname:$scope.name1 
+ };
+ return $scope.persons.push(user);
+ }
+ });
+ </script>
+ </head>
+<body ng-app="mod" style="background-image:url('image.jpg')">
+
+<div ng-controller="con1">
+Firstname:<input type="text" ng-model="name"><br><br>
+Lastname:<input type="text" ng-model="name1"><br><br>
+
+<table>
+<tr>
+<th>firstname</th>
+<th>lastnmae</th>
+<tr ng-repeat="p in persons">
+<td>{{p.fname}}</td>
+<td>{{p.lname}}</td>
+</tr>
+<tr>
+<button ng-click="add()">Add Names</button>
+</tr>
+</div>
+</body> 
+</head>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DETAILS</title>
+<font size="10" color="white">WELCOME TO THE WORLD OF ASSASSIN</font>
+<script src="angular.min.js">
+</script>
+<script language="javascript">
+angular.module("mod",[]).controller("con1",function($scope){
+$scope.Fname="";
+$scope.Lname="";
+$scope.getvalues=function (){
+
+$scope.confirm=true;
+return $scope.display ="Firstname:" + $scope.Fname +"Lastname:" + $scope.Lname + "Address:" + $scope.address +"email:" + $scope.email + "qualification:" + $scope.qualification;
+}
+});
+</script>
+
+</head>
+<body ng-app="mod" style="background-image:url('assasins.jpg');background-repeat: no-repeat;background-size: 100% 195%;" >
+<h3 style="color:white;>
+<div ng-controller="con1" >
+<p>Firstname: <input type="text" ng-model="Fname" placeholder="Enter name here"></p>
+<p>Lastname: <input type="text" ng-model="Lname" placeholder="Enter name here"></p>
+<br>
+Gender:
+<input type="radio" name="gender" ng-model="gender" value="male">male
+<input type="radio" name="gender" ng-model="gender" value="female">female
+<input type="radio" name="gender" ng-model="gender" value="other">other<br>
+<br>
+Address:
+<textarea rows="3" cols="30" name="address" ng-model="address"><br>
+</textarea>
+<br><br>
+Email:
+<input type="text" name="email" ng-model="email">
+<br>
+<br>
+Qualification:
+<select ng-model="qualification">
+<option value="b.e">B.E</option>
+<option value="m.e">M.E</option>
+<option value="other">others</option>
+</select><br>
+<br>
+ <button ng-click="getvalues()">SUBMIT</button>
+ <div ng-show="confirm">
+Confirm your details
+{{display}}
+
+</div>
+</div>
+</h3>
+</body>
+</html>

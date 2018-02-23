@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="angular.min.js"></script>
+<script>
+angular.module("mod",[]).controller("con1",function($scope){
+ $scope.Name = "ferby ";
+ $scope.message = "welcome";
+ });
+ </script>
+ </head>
+<body ng-app="mod" style="background-image:url('image.jpg')">
+<div ng-controller="con1">
+Input: <input type="text" ng-model="name"><br><br>
+<p>HAI... {{name}} {{message}} </p>
+</div>
+</body> 
+</head>
+</html>
